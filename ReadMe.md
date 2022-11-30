@@ -201,3 +201,12 @@ https://youtu.be/gZBKGn0wQXU
               },
             });
             ```
+
+12. vue cli 설치
+
+    1. node js lts 버전 설치
+    2. yarn global add @vue/cli 입력
+    3. 설치 완료 확인 : vue --version
+    4. 뷰 설치 : vue create hello-world
+
+    5. vue cli를 설치 하지 않고, vue를 설치하고 싶다면? @vue/cli create test2
