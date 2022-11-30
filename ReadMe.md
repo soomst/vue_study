@@ -102,6 +102,7 @@ https://youtu.be/gZBKGn0wQXU
    watch 속성은 데이터 변화를 감지하여 자동으로 특정 로직을 수행한다.  
    computed 속성과 유사하지만 computed는 내장 api를 사용하는 간단한 연산정도에 적합하고  
    watch는 데이터 호출과 같이 시간이 상대적으로 더 많이 소모되는 비동기 처리에 적합하다.
+
    ```
    watch: {
     //데이터명과 함수명이 동일해야함.
@@ -111,3 +112,5 @@ https://youtu.be/gZBKGn0wQXU
       },
     },
    ```
+
+   참고글) [계산된 속성(computed), 감시자(watch)](http://hong.adfeel.info/frontend/%EA%B3%84%EC%82%B0%EB%90%9C-%EC%86%8D%EC%84%B1computed-%EA%B0%90%EC%8B%9C%EC%9E%90watch/)
