@@ -114,3 +114,6 @@ https://youtu.be/gZBKGn0wQXU
    ```
 
    참고글) [계산된 속성(computed), 감시자(watch)](http://hong.adfeel.info/frontend/%EA%B3%84%EC%82%B0%EB%90%9C-%EC%86%8D%EC%84%B1computed-%EA%B0%90%EC%8B%9C%EC%9E%90watch/)
+
+7. [클래스 & 스타일 바인딩](https://v2.vuejs.org/v2/guide/class-and-style.html)
+   data속 불린타입 변수값만 바꿔도 remove/add class가 가능하다.

@@ -5,39 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>뷰 기초 익히기</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .font-bold {
+        font-weight: bold;
+      }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
-      <button @click="changeMessage">Click</button> <br />
-      <p>Original message: "{{ message }}"</p>
-      <p>Computed reversed message: "{{ reversedMessage }}"</p>
-      <p>{{updated}}</p>
+      <!-- <div :class="{ red: isRed, 'font-bold': isBold}">Hello</div> -->
+      <div :style="{color: red, fontSize: size}">Hello</div>
+      <button @click="update">click</button>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          message: "안녕하세요",
-          updated: "아니요",
+          isRed: false,
+          isBold: false,
+          red: "red",
+          size: "30px",
         },
         methods: {
-          changeMessage() {
-            this.message = "Hello";
+          update() {
+            this.isRed = !this.isRed;
+            this.isBold = !this.isBold;
           },
         },
-        computed: {
-          reversedMessage() {
-            return this.message.split("").reverse().join("");
-          },
-        },
-        watch: {
-          //데이터명과 함수명이 동일해야함.
-          message(newValue, oldVal) {
-            console.log(newValue, oldVal);
-            this.updated = "네";
-          },
-        },
+        computed: {},
+        watch: {},
       });
     </script>
   </body>
