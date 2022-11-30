@@ -9,37 +9,88 @@
   </head>
   <body>
     <div id="app">
-      <p>{{name}}</p>
+      <!-- <p>{{name}}</p>
       <button @click="changeText">click</button>
+
+      <hr /> -->
+
+      <soom-button />
     </div>
-    <div id="app-1">
-      <p>{{name}}</p>
+    <!-- <div id="app-1"> -->
+    <!-- <p>{{name}}</p>
       <button @click="changeText">click</button>
-    </div>
+      <hr /> -->
+    <!-- <soom-button />
+    </div> -->
     <script>
+      // Vue.component("hello-world", {
+      //   template: "<div>hello world</div>",
+      // });
+      // Vue.component("soom-button", {
+      //   template: `<div>
+      //                 <p>{{name}}</p>
+      //                 <hello-world/>
+      //                 <button @click="changeText">click</button>
+      //               <div>`,
+      //   data() {
+      //     return { name: "soom" };
+      //   },
+      //   methods: {
+      //     changeText() {
+      //       this.name = "soom updated";
+      //     },
+      //   },
+      // });
+
+      const HelloWorld = {
+        template: "<div>hello world</div>",
+      };
+
+      const SoomButton = {
+        components: {
+          "hello-world": HelloWorld,
+        },
+        template: `<div>
+                      <p>{{name}}</p>
+                      <hello-world/>
+                      <button @click="changeText">click</button>
+                    <div>`,
+        data() {
+          return { name: "soom" };
+        },
+        methods: {
+          changeText() {
+            this.name = "soom updated";
+          },
+        },
+      };
+
       const app = new Vue({
         el: "#app",
-        data: {
-          name: "soom",
+        components: {
+          "soom-button": SoomButton,
         },
-        methods: {
-          changeText() {
-            app1.name = "soom updated";
-          },
-        },
+        // data: {
+        //   name: "soom",
+        // },
+        // methods: {
+        //   changeText() {
+        //     this.name = "soom updated";
+        //   },
+        // },
       });
 
-      const app1 = new Vue({
-        el: "#app-1",
-        data: {
-          name: "soom1",
-        },
-        methods: {
-          changeText() {
-            app.name = "soom1 updated";
-          },
-        },
-      });
+      // const app1 = new Vue({
+      //   el: "#app-1",
+      //   // data: {
+      //   //   name: "soom1",
+      //   // },
+      //   // methods: {
+      //   //   changeText() {
+      //   //     this.name = "soom1 updated";
+      //   //   },
+      //   // },
+      // });
     </script>
   </body>
 </html>
