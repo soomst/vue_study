@@ -11,7 +11,8 @@
     <div id="app">
       <!-- {{nextYear('안녕하세요')}} -->
       {{otherMethod('안녕하세요')}}
-      <input v-bind:type="type" v-bind:value="inputData" />
+      <input type="text" :value="inputData" />
+      <a :href="getSoomGithubLink('soomst')">숨 깃 허브</a>
     </div>
     <script>
       new Vue({
@@ -23,8 +24,12 @@
           },
           inputData: "hello",
           type: "number",
+          link: "https://github.com/",
         },
         methods: {
+          getSoomGithubLink(channel) {
+            return this.link + channel;
+          },
           nextYear(greeting) {
             // data를 바로 this에 넣어줌
             return (
