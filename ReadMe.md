@@ -56,6 +56,33 @@ https://youtu.be/gZBKGn0wQXU
 
 3. 이벤트  
    뷰 공식 페이지, 이벤트 수식어 : https://v2.vuejs.org/v2/guide/events.html#Event-Modifiers
+
    ```
+    1. 이벤트 앞에 'on' 삭제, 'v-on:' 추가
     <button v-on:click="클릭이벤트js">버튼명</button>
+
+    2. 이벤트 앞에 'on' 삭제, '@' 추가
+    <button @click="클릭이벤트js">버튼명</button>
+   ```
+
+4. 데이터 양방향 바인딩 (Data Two Way Binding - v-model)  
+   **v-model** 을 사용하면 됨!
+
+   ```
+    <div id="app">
+        // input에 데이터 입력하면 실시간으로 변경된 text 데이터 출력됨.
+        <input type="text" v-model="text"/><br />
+        {{text}}<br/>
+      </form>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          text: "text",
+        },
+        methods: {
+        },
+      });
+    </script>
    ```
