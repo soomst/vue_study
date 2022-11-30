@@ -9,34 +9,22 @@
   </head>
   <body>
     <div id="app">
-      <!-- <template v-if="isShow"> -->
-      <!-- <template v-if="number === 1">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-      </template>
-      <div v-else-if="number === 2">Yes</div>
-      <div v-else>No</div>
-      <button @click="increaseNumber">Increase</button> {{number}} -->
-      <div v-show="isShow">Yes</div>
-      <br />
-      <button @click="toggleShow">Toggle</button>
+      <div v-for="(person, index) in people" :key="person.name">
+        {{index}} : {{person.name}} {{person.age}}
+      </div>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          isShow: true,
-          number: 1,
+          people: [
+            { name: "a", age: 20 },
+            { name: "b", age: 21 },
+            { name: "c", age: 22 },
+            { name: "d", age: 23 },
+          ],
         },
-        methods: {
-          toggleShow() {
-            this.isShow = !this.isShow;
-          },
-          increaseNumber() {
-            this.number++;
-          },
-        },
+        methods: {},
       });
     </script>
   </body>
