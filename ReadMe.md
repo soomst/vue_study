@@ -136,3 +136,37 @@ https://youtu.be/gZBKGn0wQXU
       {{배열값.name}} {{배열값.age}}
    </div>
    ```
+
+10. 여러개의 Vue 인스턴스 사용하기
+
+    1. new Vue({...})로 생성한 인스턴스를 변수에 담아준다.
+    2. 하나 더 만듬
+    3. Vue 인스턴스에서 다른 Vue 인스턴스의 데이터 혹은 메소드의 접근 하고 싶을 때  
+        '인스턴스 변수명.데이터명, 인스턴스 변수명.메소드명' 이런 식으로 접근 할 수 있다.
+
+       ```
+       <script>
+        const app = new Vue({
+          el: "#app",
+          data: {
+            name: "soom",
+          },
+          methods: {
+            changeText() {
+              app1.name = "soom updated"; //***
+            },
+          },
+        });
+        const app1 = new Vue({
+          el: "#app-1",
+          data: {
+            name: "soom1",
+          },
+          methods: {
+            changeText() {
+              app.name = "soom1 updated"; //***
+            },
+          },
+        });
+       </script>
+       ```
