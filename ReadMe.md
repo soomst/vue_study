@@ -97,3 +97,17 @@ https://youtu.be/gZBKGn0wQXU
      - computed는 data 속성에 변화가 있을때 자동으로 다시 연산을 한다.  
        같은 페이지내에서 같은 연산을 여러번 반복해야 할 경우에 성능면에서 효율적으로 사용할 수 있다.
      - methods는 캐싱이라는 개념이 없기 때문에 매번 재 렌더링된다.
+
+6. [Watch 속성](https://v2.vuejs.org/v2/guide/computed.html#Watchers)  
+   watch 속성은 데이터 변화를 감지하여 자동으로 특정 로직을 수행한다.  
+   computed 속성과 유사하지만 computed는 내장 api를 사용하는 간단한 연산정도에 적합하고  
+   watch는 데이터 호출과 같이 시간이 상대적으로 더 많이 소모되는 비동기 처리에 적합하다.
+   ```
+   watch: {
+    //데이터명과 함수명이 동일해야함.
+    message(newValue, oldVal) { // 새로운 값, 이전 값
+        console.log(newValue, oldVal);
+        ...
+      },
+    },
+   ```

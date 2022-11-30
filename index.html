@@ -9,17 +9,17 @@
   </head>
   <body>
     <div id="app">
-      <!-- 템플릿 안에 너무 복잡한 연산을 넣게 되면 코드 가독성도 떨어지고 유지보수 어려움 -->
-      <!-- {{ message.split('').reverse().join('') }} -->
       <button @click="changeMessage">Click</button> <br />
       <p>Original message: "{{ message }}"</p>
       <p>Computed reversed message: "{{ reversedMessage }}"</p>
+      <p>{{updated}}</p>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
           message: "안녕하세요",
+          updated: "아니요",
         },
         methods: {
           changeMessage() {
@@ -29,6 +29,13 @@
         computed: {
           reversedMessage() {
             return this.message.split("").reverse().join("");
+          },
+        },
+        watch: {
+          //데이터명과 함수명이 동일해야함.
+          message(newValue, oldVal) {
+            console.log(newValue, oldVal);
+            this.updated = "네";
           },
         },
       });
