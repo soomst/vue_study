@@ -9,40 +9,30 @@
   </head>
   <body>
     <div id="app">
-      <!-- {{nextYear('안녕하세요')}} -->
-      {{otherMethod('안녕하세요')}}
-      <input type="text" :value="inputData" />
-      <a :href="getSoomGithubLink('soomst')">숨 깃 허브</a>
+      {{year}}<br />
+      <button v-on:click="plus">더하기</button>
+      <button v-on:click="minus">빼기</button>
+
+      <form v-on:submit="submit">
+        <input type="text" /><br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          person: {
-            name: "soom coder",
-            age: 28,
-          },
-          inputData: "hello",
-          type: "number",
-          link: "https://github.com/",
+          year: 2022,
         },
         methods: {
-          getSoomGithubLink(channel) {
-            return this.link + channel;
+          plus() {
+            this.year++;
           },
-          nextYear(greeting) {
-            // data를 바로 this에 넣어줌
-            return (
-              greeting +
-              "! " +
-              this.person.name +
-              "는 내년에 " +
-              (this.person.age + 1) +
-              "살 입니다."
-            );
+          minus() {
+            this.year--;
           },
-          otherMethod: function () {
-            return this.nextYear("Hi");
+          submit() {
+            alert("submitted");
           },
         },
       });

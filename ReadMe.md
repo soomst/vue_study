@@ -53,3 +53,9 @@ https://youtu.be/gZBKGn0wQXU
    //2. 바인딩 할 속성 앞에 ':' 추가 후, 속성값에 데이터명 작성
    <input :type="type"  d:value="inputData" />
    ```
+
+3. 이벤트  
+   뷰 공식 페이지, 이벤트 수식어 : https://v2.vuejs.org/v2/guide/events.html#Event-Modifiers
+   ```
+    <button v-on:click="클릭이벤트js">버튼명</button>
+   ```
