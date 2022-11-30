@@ -86,3 +86,14 @@ https://youtu.be/gZBKGn0wQXU
       });
     </script>
    ```
+
+5. [Computed 속성](https://v2.vuejs.org/v2/guide/computed.html)  
+   템플릿안에 간단한 연산을 넣는 건 괜찮지만, 너무 많은 연산을 하려고 하면 코드가 비대해지고 유지보수가 어렵다.  
+   이런 경우 computed 속성을 사용해보자.
+
+   Computed VS Method?
+
+   - **computed 속성은 캐싱을 하고 method 속성은 캐싱을 하지 않는다.**
+     - computed는 data 속성에 변화가 있을때 자동으로 다시 연산을 한다.  
+       같은 페이지내에서 같은 연산을 여러번 반복해야 할 경우에 성능면에서 효율적으로 사용할 수 있다.
+     - methods는 캐싱이라는 개념이 없기 때문에 매번 재 렌더링된다.

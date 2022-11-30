@@ -9,26 +9,27 @@
   </head>
   <body>
     <div id="app">
-        <!-- <input type="text" :value="text" @keyup="updateText"/><br /> -->
-        <input type="text" v-model="text"/><br />
-        {{text}}<br/>
-        <button type="submit">Submit</button>
-      </form>
+      <!-- 템플릿 안에 너무 복잡한 연산을 넣게 되면 코드 가독성도 떨어지고 유지보수 어려움 -->
+      <!-- {{ message.split('').reverse().join('') }} -->
+      <button @click="changeMessage">Click</button> <br />
+      <p>Original message: "{{ message }}"</p>
+      <p>Computed reversed message: "{{ reversedMessage }}"</p>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          year: 2022,
-          text: "text",
+          message: "안녕하세요",
         },
         methods: {
-            // updateText(event) {
-            //     this.text = event.target.value;
-            // },
-            submit() {
-                alert("submitted");
-            },
+          changeMessage() {
+            this.message = "Hello";
+          },
+        },
+        computed: {
+          reversedMessage() {
+            return this.message.split("").reverse().join("");
+          },
         },
       });
     </script>
