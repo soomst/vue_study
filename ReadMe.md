@@ -117,3 +117,13 @@ https://youtu.be/gZBKGn0wQXU
 
 7. [클래스 & 스타일 바인딩](https://v2.vuejs.org/v2/guide/class-and-style.html)
    data속 불린타입 변수값만 바꿔도 remove/add class가 가능하다.
+
+8. v-if, v-show
+
+   - v-if : v-if를 사용하여 조건에 따른 조건부 렌더링이 가능하다.
+   - v-show : v-show를 사용하여 조건에 따라 렌더링 된 태그의 display를 설정 할 수 있다.
+
+   |                           | v-if                        | v-show               |
+   | ------------------------- | --------------------------- | -------------------- |
+   | 렌더링                    | false일 때 렌더링 하지 않음 | 무조건 렌더링        |
+   | 조건에 부합하지 않는 경우 | false일때 DOM에서 사라짐    | display:none; 처리됨 |
