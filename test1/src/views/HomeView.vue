@@ -2,7 +2,7 @@
   <div>
     <h1>This is Home Page</h1>
     <form action="">
-      <InputField :name="name" @update-name="updateName" />
+      <InputField :name="name" @update-name="name = $event.target.value" />
       <button>Submit</button>
     </form>
     {{ name }}
@@ -21,11 +21,11 @@ export default {
       name: "",
     };
   },
-  methods: {
-    updateName(name) {
-      this.name = name;
-    },
-  },
+  // methods: {
+  //   updateName(name) {
+  //     this.name = name;
+  //   },
+  // },
 };
 </script>
 
