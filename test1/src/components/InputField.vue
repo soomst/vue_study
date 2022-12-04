@@ -3,9 +3,9 @@
     <label for="">Name</label>
     <input
       type="text"
-      :value="name"
+      :value="value"
       style="padding: 30px; border: 2px solid green"
-      @input="$emit('update-name', $event)"
+      @input="$emit('input', $event.target.value)"
     />
     <!-- @input : input 태그에 입력 일어나면 updateName 메소드 실행 -->
   </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
   props: {
-    name: {
+    value: {
       type: String,
       required: true,
     },

@@ -242,3 +242,66 @@ https://youtu.be/gZBKGn0wQXU
     - required : 해당 props를 부모에서 전달해 주지 않았을 때 이 속성이 true라면 에러가 발생한다. 다만 렌더링은 된다.
 
     ### props로 넘겨받은 데이터는 자식 컴포넌트에서 변경하면 안된다. 부모 컴포넌트로 이벤트를 넘겨 데이터를 변경해주는 방식으로 변경해야 한다.
+
+14. 부모 컴포넌트로 데이터 보내기 (emit)
+
+    ```
+    $emit('부모에게 보낼 액션명', '부모에게 보낼 데이터');
+    ```
+
+    부모 컴포넌트에서 자식 컴포넌트 선언 시, props 데이터를 v-model로 넘겨주면 자식은 value로 받음.  
+    그런 경우 이러한 코드 가능.
+
+    ```
+    // 부모 컴포넌트 ===========================
+    <template>
+      <div>
+        <h1>This is Home Page</h1>
+        <form action="">
+          <InputField v-model="name" />  *****
+          <button>Submit</button>
+        </form>
+        {{ name }}
+      </div>
+    </template>
+
+    <script>
+      import InputField from "@/components/InputField.vue";
+
+      export default {
+        components: {
+          InputField,
+        },
+        data() {
+          return {
+            name: "",
+          };
+        }
+      };
+    </script>
+
+    // 자식 컴포넌트 ===========================
+    <template>
+      <div>
+        <label for="">Name</label>
+        <input
+          type="text"
+          :value="value"
+          style="padding: 30px; border: 2px solid green"
+          @input="$emit('input', $event.target.value)"  *****
+        />
+      </div>
+    </template>
+
+    <script>
+    export default {
+      props: {
+        value: {
+          type: String,
+          required: true,
+        },
+      }
+    };
+    </script>
+
+    ```
