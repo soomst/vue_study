@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>This is Home Page</h1>
-    <soomCoder />
+    <soomCoder title="Home Title" />
   </div>
 </template>
 

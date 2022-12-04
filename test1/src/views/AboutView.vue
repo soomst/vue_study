@@ -1,16 +1,21 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <HelloWorld />
+    <soomCoder />
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import soomCoder from "@/components/SoomCoder.vue";
 
 export default {
   components: {
-    HelloWorld,
+    soomCoder,
+  },
+  data() {
+    return {
+      name: "soom coder",
+    };
   },
 };
 </script>

@@ -211,3 +211,34 @@ https://youtu.be/gZBKGn0wQXU
     3. 설치 완료 확인 : vue --version
     4. 뷰 설치 : vue create hello-world
     5. vue cli를 설치 하지 않고, vue를 설치하고 싶다면? @vue/cli create test2
+
+13. 자식 컴포넌트에 데이터 보내기 (props)
+
+    1. props속성에 넘겨받을 데이터의 key를 작성한다.
+
+    ```
+    export default {
+      props: ['데이터key명']
+    }
+    ```
+
+    2. 보통은 넘겨받을 데이터들을 선언할 때 객체형으로 선언하여 데이터의 type과 필수여부 등 을 함께 작성한다.
+
+    ```
+    export default {
+      props: {
+        데이터key : {
+          type: String | Number | Boolean,
+          required : true | false,
+          default : 'default value'
+        }
+      }
+    }
+    ```
+
+    - type : 해당 변수의 타입을 정할 수 있다. 복수개를 정하고 싶으면 array에 넣으면된다.  
+      타입이 미스매치될 경우 에러가 발생한다. 다만 렌더링은 된다.
+    - default : 부모에서 값을 전달해주지 않았을 경우의 기본값을 설정한다.
+    - required : 해당 props를 부모에서 전달해 주지 않았을 때 이 속성이 true라면 에러가 발생한다. 다만 렌더링은 된다.
+
+    ### props로 넘겨받은 데이터는 자식 컴포넌트에서 변경하면 안된다. 부모 컴포넌트로 이벤트를 넘겨 데이터를 변경해주는 방식으로 변경해야 한다.
