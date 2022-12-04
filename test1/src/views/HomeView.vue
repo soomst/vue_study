@@ -1,21 +1,30 @@
 <template>
   <div>
     <h1>This is Home Page</h1>
-    <soomCoder title="Home Title" />
+    <form action="">
+      <InputField :name="name" @update-name="updateName" />
+      <button>Submit</button>
+    </form>
+    {{ name }}
   </div>
 </template>
 
 <script>
-import soomCoder from "@/components/SoomCoder.vue";
+import InputField from "@/components/InputField.vue";
 
 export default {
   components: {
-    soomCoder,
+    InputField,
   },
   data() {
     return {
-      name: "soom coder",
+      name: "",
     };
+  },
+  methods: {
+    updateName(name) {
+      this.name = name;
+    },
   },
 };
 </script>

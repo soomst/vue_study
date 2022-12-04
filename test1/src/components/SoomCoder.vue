@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     updateName() {
-      this.name = "Soom Coder updated";
+      //this.name = "Soom Coder updated";
     },
   },
 };
