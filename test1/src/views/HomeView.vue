@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>This is Home Page</h1>
+    <soomCoder />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import soomCoder from "@/components/SoomCoder.vue";
 
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    soomCoder,
+  },
+  data() {
+    return {
+      name: "soom coder",
+    };
+  },
+};
 </script>
+
+<style scoped>
+h1 {
+  color: brown;
+}
+</style>

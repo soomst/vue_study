@@ -173,26 +173,28 @@ https://youtu.be/gZBKGn0wQXU
 
 11. [Vue 컴포넌트](https://v2.vuejs.org/v2/guide/components.html)
 
-        1. 전역 등록 : 어떤 vue 인스턴스에서도 사용할 수 있음
-           스크립트 내 Vue.component를 만든다.
-           ```
-            Vue.component('컴포넌트명', {
-              template : `렌더링 시킬 HTML element 작성`,
-              data() {
-                //data가 객체(배열)인 경우 참조형 데이터이므로 data가 변형되지 않기 위해
-                //data()함수로 작성
-                return obj;
-              },
-              methods: {
-                ...
-              },
-            })
-           ```
-        1. 지역 등록 : 전역 컴포넌트 인 경우 더 이상 사용하지 않는 컴포넌트이여도 최종 빌드에 들어가게 되므로
-           자바스크립트의 양이 불필요하게 커질 수 있다. **이러한 것을 막기 위해 지역 컴포넌트를 사용해보자**
+    1.  전역 등록 : 어떤 vue 인스턴스에서도 사용할 수 있음. 스크립트 내 Vue.component를 만든다.
 
-           1. 컴포넌트를 생성하여 변수에 담는다.
-           2. 뷰 인스턴스를 생성할 때, 사용할 컴포넌트를 함께 등록해준다.
+        ```
+        Vue.component('컴포넌트명', {
+
+        template : `렌더링 시킬 HTML element 작성`,
+          data() {
+            //data가 객체(배열)인 경우 참조형 데이터이므로 data가 변형되지 않기 위해
+            //data()함수로 작성
+            return obj;
+          },
+          methods: {
+            ...
+          },
+        })
+        ```
+
+    2.  지역 등록 : 전역 컴포넌트 인 경우 더 이상 사용하지 않는 컴포넌트이여도 최종 빌드에 들어가게 되므로 자바스크립트의 양이 불필요하게 커질 수 있다.  
+        **이러한 것을 막기 위해 지역 컴포넌트를 사용해보자**
+
+        1. 컴포넌트를 생성하여 변수에 담는다.
+        2. 뷰 인스턴스를 생성할 때, 사용할 컴포넌트를 함께 등록해준다.
            ```
             const app = new Vue({
               el: "#app",
@@ -200,7 +202,7 @@ https://youtu.be/gZBKGn0wQXU
                 "soom-button": SoomButton,
               },
             });
-            ```
+           ```
 
 12. vue cli 설치
 
@@ -208,5 +210,4 @@ https://youtu.be/gZBKGn0wQXU
     2. yarn global add @vue/cli 입력
     3. 설치 완료 확인 : vue --version
     4. 뷰 설치 : vue create hello-world
-
     5. vue cli를 설치 하지 않고, vue를 설치하고 싶다면? @vue/cli create test2
