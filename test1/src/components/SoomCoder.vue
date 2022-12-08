@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <p>{{ name }}</p>
-    <button @click="updateName">Change Name</button>
+    <p>header</p>
+    <slot name="header" :soom="soom"></slot>
+    <p>body</p>
+    <slot></slot>
+    <p>footer</p>
   </div>
 </template>
 
@@ -22,6 +24,7 @@ export default {
   },
   data() {
     return {
+      soom: "coder",
       // name: "Soom Coder",
     };
   },

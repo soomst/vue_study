@@ -305,3 +305,46 @@ https://youtu.be/gZBKGn0wQXU
     </script>
 
     ```
+
+15. slot  
+    슬롯(Slots)은 엄격한 부모(Parent)-자식(Child) 컴포넌트 관계가 아닌 다른 방식으로 컴포넌트를 구성할 수 있는 Vue 컴포넌트 메커니즘 이다.  
+    슬롯은 콘텐츠를 새로운 위치에 배치하거나 컴포넌트를 보다 일반적으로 만들 수 있는 방식을 제공한다. 이러한 메커니즘을 통해 컴포넌트를 훨씬 재사용하기 용이하게 만든다.
+
+    - slot 예제
+
+      1. slot에 이름 지정하기
+
+      - v-slot 사용
+      - #사용
+
+      ```
+      // 자식.vue
+      <slot name="header"></slot>
+
+      // 부모.vue
+      <자식>
+        <!-- <template v-slot:header> -->
+        <template #header>
+          <h1>header1</h1>
+        </template>
+        <template v-slot:default> <h3>hello1</h3> </template>
+      </자식>
+      ```
+
+      2. slot에 데이터 넘기기
+
+      ```
+      // 자식.vue
+      slot name="header" :soom="soom"></slot> //데이터 : {soom : 'coder'}
+
+      // 부모.vue
+      <자식>
+        <template #header="{ soom }">
+          {{ soom }}
+          <h1>header1</h1>
+        </template>
+        <template v-slot:default> <h3>hello1</h3> </template>
+      </자식>
+      ```
+
+참고글) [Vue 슬롯(slot) 사용법 및 예제 (Understanding Slot in Vue.js)](https://webruden.tistory.com/923)
